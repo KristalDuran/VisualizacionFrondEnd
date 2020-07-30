@@ -1,0 +1,116 @@
+.Planet{
+position: absolute;
+background: url('./../assets/img/image1.png');
+width: 100%;
+height: 100%;
+
+}
+
+.Planet-raya{
+    position: relative;
+    width: 100%;
+    margin-left: -48%;
+    border: 4px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transform: rotate(90.13deg);
+}
+
+.Planet-rayitas{
+    background: url('./../assets/img/rayitasNegro.png');
+    width: 544px;
+    height: 366px;
+    margin-top: -10px;
+    margin-left: 66%;
+}
+
+.Planet-text{
+    position: absolute;
+    font-size: 60px;
+    color: #FFFF;
+    margin-top: -335px;
+    margin-left: 200px;
+}
+
+.Planet-map{
+    width: 923px;
+    height: 558px;
+    margin-left: 354px;
+    margin-top: -204px;
+    background: rgba(255, 255, 255, 0.62);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.Planet-map-america{
+    margin-top: 100px;
+    margin-left: 100px;
+    width: 304px;
+    height: 300px;
+    
+}
+
+.Planet-map-america:hover{
+    margin-top: 80px;
+    margin-left: 80px;
+    width: 324px;
+    height: 320px;
+}
+
+.Planet-map-europa{
+    margin-bottom: 120px;
+    margin-left: 60px;
+}
+
+.Planet-map-europa:hover{
+    margin-bottom: 120px;
+    margin-left: 40px;
+    width: 217px;
+    height: 195px;
+}
+
+.Planet-map-asia{
+    margin-bottom: 70px;
+    margin-left: -70px;
+}
+
+.Planet-map-asia:hover{
+    width: 216px;
+    height: 195px;
+    margin-bottom: 90px;
+    margin-left: -70px;
+}
+
+.Planet-map-africa{
+    margin-left: -350px;
+    margin-bottom: -40px;
+}
+
+.Planet-map-africa:hover{
+    width: 156px;
+    height: 171px;
+    margin-left: -370px;
+    margin-bottom: -40px;
+}
+
+.Planet-map-australia{
+    margin-left: 150px;
+    margin-bottom: -50px;
+}
+
+.Planet-map-australia:hover{
+    margin-left: 150px;
+    margin-bottom: -50px;
+    width: 128px;
+    height: 119px;
+}
+
+.Planet-map-polo{
+    margin-top: 86px;
+    margin-left: 250px;
+}
+
+.Planet-map-polo:hover{
+    width: 473.55px;
+    height: 88.68px;
+    margin-top: 66px;
+    margin-left: 250px;
+}
