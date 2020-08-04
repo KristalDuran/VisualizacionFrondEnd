@@ -1,3 +1,13 @@
+.Continente{
+    background: url('./../assets/img/image1.png');
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+
 .Continente-raya{
     position: relative;
     width: 100%;
@@ -13,4 +23,17 @@
     height: 366px;
     margin-top: -10px;
     margin-left: 66%;
+}
+
+.Continente-map-america{
+    width: 450px;
+    margin-left: 500px;
+    margin-top: -300px;
+}
+.Continente-text{
+    position: absolute;
+    font-size: 60px;
+    color: #FFFF;
+    margin-top: -380px;
+    margin-left: 200px;
 }

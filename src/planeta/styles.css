@@ -1,9 +1,10 @@
 .Planet{
-position: absolute;
-background: url('./../assets/img/image1.png');
-width: 100%;
-height: 100%;
-
+    background: url('./../assets/img/image1.png');
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 .Planet-raya{
@@ -27,7 +28,7 @@ height: 100%;
     position: absolute;
     font-size: 60px;
     color: #FFFF;
-    margin-top: -335px;
+    margin-top: -380px;
     margin-left: 200px;
 }
 
@@ -35,7 +36,7 @@ height: 100%;
     width: 923px;
     height: 558px;
     margin-left: 354px;
-    margin-top: -204px;
+    margin-top: -250px;
     background: rgba(255, 255, 255, 0.62);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -104,7 +105,7 @@ height: 100%;
 }
 
 .Planet-map-polo{
-    margin-top: 86px;
+    margin-top: 50px;
     margin-left: 250px;
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles.css';
+import america from './../assets/img/america.png';
 
 export class Continente extends React.Component {
 
@@ -16,7 +17,8 @@ export class Continente extends React.Component {
       <div className="Continente">
         <div className="Continente-raya"></div>
         <div className="Continente-rayitas"></div>
-        <p className="Continente-text">{this.state.name}</p>
+        <p className="Continente-text">América</p>
+        <img className="Continente-map-america" src={america}></img>
       </div>
     );
   }

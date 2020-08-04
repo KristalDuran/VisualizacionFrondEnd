@@ -21,8 +21,8 @@ import background from './assets/img/background1.png';
 import lineas from './assets/img/lineas.png';
 import tierra from './assets/img/tierra.gif';
 import './App.css';
-// import Planet from './planeta/planet';
-import Continete from './continente/continente';
+import Planet from './planeta/planet';
+import Continente from './continente/continente';
 function App() {
   return (
     // <div className="app">
@@ -36,7 +36,7 @@ function App() {
     //   </div>
     //   <img src={tierra} className="app__tierra"/>
     // </div>
-    <Continete></Continete>
+    <Continente></Continente>
   );
 }
 export default App;
