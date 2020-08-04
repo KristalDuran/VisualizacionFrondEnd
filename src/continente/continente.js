@@ -8,7 +8,8 @@ export class Continente extends React.Component {
     super(props, context);
 
     this.state = {
-        name:this.props.name
+        name:this.props.location.state.name
+
     };
   }
 
@@ -17,7 +18,7 @@ export class Continente extends React.Component {
       <div className="Continente">
         <div className="Continente-raya"></div>
         <div className="Continente-rayitas"></div>
-        <p className="Continente-text">América</p>
+        <p className="Continente-text">{this.state.name}</p>
         <img className="Continente-map-america" src={america}></img>
       </div>
     );
