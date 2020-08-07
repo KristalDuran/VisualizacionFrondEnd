@@ -12,6 +12,8 @@ import { CookiesProvider } from 'react-cookie';
 import store from './store/store';
 import Main from './App';
 import Continente from './continente/continente';
+import Pais from './pais/pais';
+import Estado from './estado/estado';
 
 export default class Root extends Component {
   constructor(props) {
@@ -23,6 +25,8 @@ export default class Root extends Component {
         <Provider store={store}>
           <Router>
               <Switch>
+                <Route path="/estado" component={Estado} />
+                <Route path="/pais" component={Pais} />
                 <Route path="/continente" component={Continente} />
                 <Route path="/planetax" component={Planeta} />
                 <Route path="/" component={Main} />

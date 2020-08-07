@@ -25,15 +25,40 @@ export class Planet extends React.Component {
         <div className="Planet-map">
           <Link to={{
             pathname: "/continente",
-            state: {name:"America"}
-          }}> 
+            state: {name:"América"}
+          }}>
             <img className="Planet-map-america" src={america}></img>
           </Link>
+          <Link to={{
+            pathname: "/continente",
+            state: {name:"Europa"}
+          }}>
             <img className="Planet-map-europa" src={europa}></img>
+          </Link>
+          <Link to={{
+            pathname: "/continente",
+            state: {name:"Asia"}
+          }}>
             <img className="Planet-map-asia" src={asia}></img>
+          </Link>
+          <Link to={{
+            pathname: "/continente",
+            state: {name:"África"}
+          }}>
             <img className="Planet-map-africa" src={africa}></img>
+          </Link>
+          <Link to={{
+            pathname: "/continente",
+            state: {name:"Oceanía"}
+          }}>
             <img className="Planet-map-australia" src={australia}></img>
+          </Link>
+          <Link to={{
+            pathname: "/continente",
+            state: {name:"Antártida"}
+          }}>
             <img className="Planet-map-polo" src={polo}></img>
+          </Link> 
         </div>
       </div>
     );
