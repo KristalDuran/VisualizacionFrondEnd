@@ -7,6 +7,8 @@ import australia from './../assets/img/australia.png';
 import africa from './../assets/img/africa.png';
 import polo from './../assets/img/polo.png';
 import { Link } from 'react-router-dom';
+import Services from './../services/services';
+
 export class Planet extends React.Component {
 
   constructor(props, context) {
@@ -14,6 +16,11 @@ export class Planet extends React.Component {
 
     this.state = {
     };
+  }
+
+  componentDidMount(){
+    Services.getCountriesByContinentID(3)
+    .then((data) => {console.log('bueno')});
   }
 
   render(){
