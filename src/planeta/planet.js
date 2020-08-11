@@ -15,12 +15,16 @@ export class Planet extends React.Component {
     super(props, context);
 
     this.state = {
+      names: []
     };
   }
 
   componentDidMount(){
     Services.getCountriesByContinentID(3)
-    .then((data) => {console.log('bueno')});
+    .then((data) => {
+      this.setState({names: data.content});
+      console.log('bueno')
+    });
   }
 
   render(){
@@ -30,9 +34,10 @@ export class Planet extends React.Component {
         <div className="Planet-rayitas"></div>
         <p className="Planet-text">Ciudades del Mundo</p>
         <div className="Planet-map">
+
           <Link to={{
             pathname: "/continente",
-            state: {name:"América"}
+            state: {id:this.state.names[0].id}
           }}>
             <img className="Planet-map-america" src={america}></img>
           </Link>

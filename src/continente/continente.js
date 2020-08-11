@@ -8,19 +8,29 @@ import africa from './../assets/img/africa.png';
 import polo from './../assets/img/polo.png';
 import { Link } from 'react-router-dom';
 
+import Services from './../services/services';
+
 export class Continente extends React.Component {
 
   constructor(props, context) {
     super(props, context);
 
     this.state = {
-        name:this.props.location.state.name
+        id:this.props.location.state.id,
+        info: {}
     };
+  }
+
+  componentDidMount(){
+    Services.getContinetByID(this.state.id)
+    .then((data) => {
+      this.setState({info: data.content})
+    });
   }
 
   render(){
     let continente = '';
-    if (this.state.name == "América"){
+    if (this.state.info.name == "América"){
       continente = america
     }
     if (this.state.name == "Europa"){
