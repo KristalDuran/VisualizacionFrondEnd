@@ -41,7 +41,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.Planet-map-america{
+.Planet-map-América{
     margin-top: 100px;
     margin-left: 100px;
     width: 304px;
@@ -49,55 +49,55 @@
     
 }
 
-.Planet-map-america:hover{
+.Planet-map-América:hover{
     margin-top: 80px;
     margin-left: 80px;
     width: 324px;
     height: 320px;
 }
 
-.Planet-map-europa{
+.Planet-map-Europa{
     margin-bottom: 120px;
     margin-left: 60px;
 }
 
-.Planet-map-europa:hover{
+.Planet-map-Europa:hover{
     margin-bottom: 120px;
     margin-left: 40px;
     width: 217px;
     height: 195px;
 }
 
-.Planet-map-asia{
+.Planet-map-Asia{
     margin-bottom: 70px;
     margin-left: -70px;
 }
 
-.Planet-map-asia:hover{
+.Planet-map-Asia:hover{
     width: 216px;
     height: 195px;
     margin-bottom: 90px;
     margin-left: -70px;
 }
 
-.Planet-map-africa{
+.Planet-map-África{
     margin-left: -350px;
     margin-bottom: -40px;
 }
 
-.Planet-map-africa:hover{
+.Planet-map-África:hover{
     width: 156px;
     height: 171px;
     margin-left: -370px;
     margin-bottom: -40px;
 }
 
-.Planet-map-australia{
+.Planet-map-Oceanía{
     margin-left: 150px;
     margin-bottom: -50px;
 }
 
-.Planet-map-australia:hover{
+.Planet-map-Oceanía:hover{
     margin-left: 150px;
     margin-bottom: -50px;
     width: 128px;

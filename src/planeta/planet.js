@@ -15,14 +15,15 @@ export class Planet extends React.Component {
     super(props, context);
 
     this.state = {
-      names: []
+      continents: []
     };
   }
 
   componentDidMount(){
     getContinents(
     (data)=>{
-      this.setState({continents: data})
+      console.log(data.data.content)
+      this.setState({continents: data.data.content})
     }, 
     (error)=> {
       console.log(error)
@@ -36,20 +37,23 @@ export class Planet extends React.Component {
         <div className="Planet-rayitas"></div>
         <p className="Planet-text">Ciudades del Mundo</p>
         <div className="Planet-map">
-
+          {this.state.continents.map((element) => {
+            return(
+            <Link to={{
+              pathname: "/continente",
+              state: {id:element.id}
+            }}>
+              <img className={`Planet-map-${element.name}`} src={element.img}/>
+            </Link>)
+          })}
           {/* <Link to={{
             pathname: "/continente",
             state: {id:this.state.names[0].id}
           }}>
             <img className="Planet-map-america" src={america}></img>
           </Link> */}
-          <Link to={{
-            pathname: "/continente",
-            state: {name:"Europa"}
-          }}>
-            <img className="Planet-map-europa" src={europa}></img>
-          </Link>
-          <Link to={{
+          
+          {/* <Link to={{
             pathname: "/continente",
             state: {name:"Asia"}
           }}>
@@ -72,7 +76,7 @@ export class Planet extends React.Component {
             state: {name:"Antártida"}
           }}>
             <img className="Planet-map-polo" src={polo}></img>
-          </Link> 
+          </Link>  */}
         </div>
       </div>
     );

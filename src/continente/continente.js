@@ -1,14 +1,8 @@
 import React from 'react';
 import './styles.css';
-import america from './../assets/img/america.png';
-import europa from './../assets/img/europa.png';
-import asia from './../assets/img/asia.png';
-import oceania from './../assets/img/australia.png';
-import africa from './../assets/img/africa.png';
-import polo from './../assets/img/polo.png';
 import { Link } from 'react-router-dom';
 
-// import Services from './../services/services';
+import { getContinetByID, getCountriesByContinentID } from './../services/services';
 
 export class Continente extends React.Component {
 
@@ -17,62 +11,57 @@ export class Continente extends React.Component {
 
     this.state = {
         id:this.props.location.state.id,
-        info: {}
+        info: {},
+        countries: []
     };
   }
 
   componentDidMount(){
-    // Services.getContinetByID(this.state.id)
-    // .then((data) => {
-    //   this.setState({info: data.content})
-    // });
+    getContinetByID(this.state.id,
+      (data)=>{
+        this.setState({info: data.data.content})
+      }, 
+      (error)=> {
+        console.log(error)
+      });
+      getCountriesByContinentID(
+        this.state.id,
+      (data)=>{
+        this.setState({countries: data.data.content})
+      }, 
+      (error)=> {
+        console.log(error)
+      }
+      )
   }
 
   render(){
-    let continente = '';
-    if (this.state.info.name == "América"){
-      continente = america
-    }
-    if (this.state.name == "Europa"){
-      continente = europa
-    }
-    if (this.state.name == "África"){
-      continente = africa
-    }
-    if (this.state.name == "Oceanía"){
-      continente = oceania
-    }
-    if (this.state.name == "Antártida"){
-      continente = polo
-    }
-    if (this.state.name == "Asia"){
-      continente = asia
-    }
     return (
       <div className="Continente">
         <link href='https://fonts.googleapis.com/css?family=Glegoo' rel='stylesheet'></link>
         <div className="Continente-raya"></div>
         <div className="Continente-rayitas"></div>
-        <p className="Continente-text">{this.state.name}</p>
+        <p className="Continente-text">{this.state.info.name}</p>
         <div className= "Continente-flex">
           <div className= "Continente-info">
-            <p className="Continente-poblacion">Población: 970 040 000</p>
-            <p className="Continente-superficie">Superficie: 42 549 000 km2</p>
+            <p className="Continente-poblacion">{this.state.info.poblation}</p>
+            <p className="Continente-superficie">{this.state.info.superficie}</p>
           </div>
-          <img className="Continente-map" src={continente}></img>
+          <img className="Continente-map" src={this.state.info.img}></img>
           <div className= "Continente-paises">
-            <Link to={{
-              pathname: "/pais",
-              state: {name:"Costa Rica"}
-            }}>
-              <p>Costa Rica</p>
-            </Link>
-            <hr className="Continente-divisor"></hr>
-            <p>México</p>
-            <hr className="Continente-divisor"></hr>
-            <p>Brasil</p>
-            <hr className="Continente-divisor"></hr>
-            <p>Panamá</p>
+            {this.state.countries.map((element) => {
+              return(
+                <div>
+                <Link to={{
+                  pathname: "/pais",
+                  state: {id:element.id}
+                }}>
+                  <p>{element.name}</p>
+                </Link>
+                <hr className="Continente-divisor"></hr>
+                </div>
+              )
+            })}
           </div>
           
         </div>

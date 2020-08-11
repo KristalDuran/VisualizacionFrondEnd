@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 import map from './../assets/img/sj-map.png';
-import { Link } from 'react-router-dom';
+import { getStateByID, getCitiesByStateID } from './../services/services';
 
 export class Estado extends React.Component {
 
@@ -9,8 +9,28 @@ export class Estado extends React.Component {
     super(props, context);
 
     this.state = {
-        name:this.props.location.state.name
+        id:this.props.location.state.id,
+        info: {},
+        cities:[]
     };
+  }
+
+  componentDidMount(){
+    getStateByID( this.state.id,
+    (data)=>{
+      this.setState({info: data.data.content})
+      console.log(data.data.content)
+    }, 
+    (error)=> {
+      console.log(error)
+    });
+    getCitiesByStateID( this.state.id,
+      (data)=>{
+        this.setState({cities: data.data.content})
+      }, 
+      (error)=> {
+        console.log(error)
+      });
   }
 
   render(){
@@ -19,22 +39,23 @@ export class Estado extends React.Component {
         <link href='https://fonts.googleapis.com/css?family=Glegoo' rel='stylesheet'></link>
         <div className="Estado-raya"></div>
         <div className="Estado-rayitas"></div>
-        <p className="Estado-text">{this.state.name}</p>
+        <p className="Estado-text">{this.state.info.name}</p>
         <div className= "Estado-flex">
           <div className= "Estado-info">
-            <p className="Estado-info-texto">Población: 1 635 144</p>
-            <p className="Estado-info-texto">Capital: San José</p>
-            <p className="Estado-info-texto">Subdivisión: 20 cantones</p>
+            <p className="Estado-info-texto">Población: {this.state.info.poblacion}</p>
+            <p className="Estado-info-texto">Capital: {this.state.info.capital}</p>
+            <p className="Estado-info-texto">Subdivisión: {this.state.info.subdivision}</p>
           </div>
           <img className="Estado-map" src={map}></img>
           <div className= "Estado-ciudades">
-            <p>San José</p>
-            <hr className="Estado-divisor"></hr> 
-            <p>Escazú</p>
-            <hr className="Estado-divisor"></hr> 
-            <p>Desamparados</p>
-            <hr className="Estado-divisor"></hr> 
-            <p>Perez Zeledón</p>
+          {this.state.cities.map((element) => {
+                return(
+                  <div>
+                    <p>{element.name}</p>
+                    <hr className="Pais-divisor"></hr>
+                  </div>
+                )
+              })}
           </div>
           
         </div>
