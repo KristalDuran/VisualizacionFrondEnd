@@ -20,7 +20,8 @@ export class Planet extends React.Component {
   }
 
   componentDidMount(){
-    getContinents((data)=>{
+    getContinents(
+    (data)=>{
       this.setState({continents: data})
     }, 
     (error)=> {
