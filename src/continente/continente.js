@@ -8,7 +8,7 @@ import africa from './../assets/img/africa.png';
 import polo from './../assets/img/polo.png';
 import { Link } from 'react-router-dom';
 
-import Services from './../services/services';
+// import Services from './../services/services';
 
 export class Continente extends React.Component {
 
@@ -22,10 +22,10 @@ export class Continente extends React.Component {
   }
 
   componentDidMount(){
-    Services.getContinetByID(this.state.id)
-    .then((data) => {
-      this.setState({info: data.content})
-    });
+    // Services.getContinetByID(this.state.id)
+    // .then((data) => {
+    //   this.setState({info: data.content})
+    // });
   }
 
   render(){

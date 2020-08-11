@@ -7,7 +7,7 @@ import australia from './../assets/img/australia.png';
 import africa from './../assets/img/africa.png';
 import polo from './../assets/img/polo.png';
 import { Link } from 'react-router-dom';
-import Services from './../services/services';
+import { getContinents } from './../services/services';
 
 export class Planet extends React.Component {
 
@@ -20,10 +20,11 @@ export class Planet extends React.Component {
   }
 
   componentDidMount(){
-    Services.getCountriesByContinentID(3)
-    .then((data) => {
-      this.setState({names: data.content});
-      console.log('bueno')
+    getContinents((data)=>{
+      this.setState({continents: data})
+    }, 
+    (error)=> {
+      console.log(error)
     });
   }
 
@@ -35,12 +36,12 @@ export class Planet extends React.Component {
         <p className="Planet-text">Ciudades del Mundo</p>
         <div className="Planet-map">
 
-          <Link to={{
+          {/* <Link to={{
             pathname: "/continente",
             state: {id:this.state.names[0].id}
           }}>
             <img className="Planet-map-america" src={america}></img>
-          </Link>
+          </Link> */}
           <Link to={{
             pathname: "/continente",
             state: {name:"Europa"}

@@ -1,13 +1,111 @@
-import { axiosApiV1 } from './axios-utils';
+import apiRequest from './axios-utils';
 
+const URL = 'http://localhost:4000/gets'
 
-export default class Service {
+export const getContinents = ( successCallback, errorCallback) => {
+  apiRequest({
+    url: `${URL}/getContinets`,
+    method: 'get',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: {
+    },
+    onSuccess: response => { successCallback(response) },
+    onError: error => { errorCallback(error) }
+  });
+}
 
-  static getCountriesByContinentID(id) {
-    return axiosApiV1().get(`getCountriesByContinentID?id=${id}`);
-  }
+export const getContinetByID = (id, successCallback, errorCallback) => {
+  apiRequest({
+    url: `${URL}/getContinetByID?id=${id}`,
+    method: 'get',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: {
+    },
+    onSuccess: response => { successCallback(response) },
+    onError: error => { errorCallback(error) }
+  });
+}
 
-  static getContinetByID(id) {
-    return axiosApiV1().get(`getContinetByID?id=${id}`);
-  }
+export const getCountriesByContinentID = (id, successCallback, errorCallback) => {
+  apiRequest({
+    url: `${URL}/getCountriesByContinentID?id=${id}`,
+    method: 'get',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: {
+    },
+    onSuccess: response => { successCallback(response) },
+    onError: error => { errorCallback(error) }
+  });
+}
+
+export const getCountryByID = (id, successCallback, errorCallback) => {
+  apiRequest({
+    url: `${URL}/getCountryByID?id=${id}`,
+    method: 'get',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: {
+    },
+    onSuccess: response => { successCallback(response) },
+    onError: error => { errorCallback(error) }
+  });
+}
+export const getStateByCountryID = (id, successCallback, errorCallback) => {
+  apiRequest({
+    url: `${URL}/getStateByCountryID?id=${id}`,
+    method: 'get',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: {
+    },
+    onSuccess: response => { successCallback(response) },
+    onError: error => { errorCallback(error) }
+  });
+}
+export const getStateByID = (id, successCallback, errorCallback) => {
+  apiRequest({
+    url: `${URL}/getStateByID?id=${id}`,
+    method: 'get',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: {
+    },
+    onSuccess: response => { successCallback(response) },
+    onError: error => { errorCallback(error) }
+  });
+}
+export const getCitiesByStateID = (id, successCallback, errorCallback) => {
+  apiRequest({
+    url: `${URL}/getCitiesByStateID?id=${id}`,
+    method: 'get',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: {
+    },
+    onSuccess: response => { successCallback(response) },
+    onError: error => { errorCallback(error) }
+  });
+}
+export const getCityByID = (id, successCallback, errorCallback) => {
+  apiRequest({
+    url: `${URL}/getCityByID?id=${id}`,
+    method: 'get',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: {
+    },
+    onSuccess: response => { successCallback(response) },
+    onError: error => { errorCallback(error) }
+  });
 }
